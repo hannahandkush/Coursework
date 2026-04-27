@@ -20,19 +20,22 @@ The project is organized into the following directories:
 
 ```
 .
-├── data_use_scripts/      # SQL scripts with example analytical queries.
-├── database_dump/         # Full database dump for backup and restoration.
-├── documentation/         # Detailed project documentation, including data dictionary and setup guides.
-├── processed_data/        # Cleaned, consolidated CSV data used for populating the database.
-├── raw_data/              # Original, unmodified data files from various sources.
-└── sql_scripts/           # Scripts for creating and populating the database schema.
+├── Project/
+│   ├── data_use_scripts/      # SQL scripts with example analytical queries.
+│   ├── database_dump/         # Full database dump for backup and restoration.
+│   ├── documentation/         # Detailed project documentation, including data dictionary and setup guides.
+│   ├── processed_data/        # Cleaned, consolidated CSV data used for populating the database.
+│   ├── raw_data/              # Original, unmodified data files from various sources.
+│   └── sql_scripts/           # Scripts for creating and populating the database schema.
+├── Report/                    # Project report.
+└── README.md                  # This file.
 ```
 
 ## 4. Database Schema
 
 The database follows a star schema with a central fact table (`phenotype_measurement`) and five dimension tables (`crop`, `location`, `variety`, `trial`, `trait`).
 
-For a complete and detailed description of each table, column, data type, and relationship, please refer to the **[Crops_MET Data Dictionary](./documentation/Crops_MET%20Data%20Dictionary.md)**.
+For a complete and detailed description of each table, column, data type, and relationship, please refer to the **[Crops_MET Data Dictionary](./Project/documentation/Crops_MET%20Data%20Dictionary.md)**.
 
 ## 5. Getting Started
 
@@ -48,16 +51,16 @@ Follow these steps to set up and populate the database on your local machine.
 
 The setup process involves running a series of SQL scripts that create the database, load the data from the `processed_data` directory, and normalize it into the schema's tables.
 
-For detailed, step-by-step instructions, please follow the **[Crops_MET Database Setup Guide](./documentation/Crops_MET_Database_Setup_Guide.md)**.
+For detailed, step-by-step instructions, please follow the **[Crops_MET Database Setup Guide](./Project/documentation/Crops_MET_Database_Setup_Guide.md)**.
 
 A quick overview of the steps is:
-1.  Navigate to the `sql_scripts` directory.
+1.  Navigate to the `Project/sql_scripts` directory.
 2.  Make the setup script executable: `chmod +x setup_db_script.sh`.
 3.  Run the script: `./setup_db_script.sh` and provide your database credentials when prompted.
 
 ## 6. Example Queries
 
-The `data_use_scripts/` directory contains a collection of SQL files that demonstrate how to query the database to answer key agricultural questions, such as:
+The `Project/data_use_scripts/` directory contains a collection of SQL files that demonstrate how to query the database to answer key agricultural questions, such as:
 
 *   Ranking variety performance by trait.
 *   Summarizing trait statistics by country or region.
@@ -66,11 +69,11 @@ The `data_use_scripts/` directory contains a collection of SQL files that demons
 
 ## 7. Documentation
 
-All project documentation is located in the `documentation/` directory.
+All project documentation is located in the `Project/documentation/` and `Report/` directories.
 
-*   **[Crops_MET Data Dictionary.md](./documentation/Crops_MET%20Data%20Dictionary.md)**: Provides a detailed description of the database schema.
-*   **[Crops_MET_Database_Setup_Guide.md](./documentation/Crops_MET_Database_Setup_Guide.md)**: Contains comprehensive setup and installation instructions.
-*   **[DMSProject_.pdf](./documentation/DMSProject_.pdf)**: The full project report detailing the design, implementation, and use of the database.
+*   **[Crops_MET Data Dictionary.md](./Project/documentation/Crops_MET%20Data%20Dictionary.md)**: Provides a detailed description of the database schema.
+*   **[Crops_MET_Database_Setup_Guide.md](./Project/documentation/Crops_MET_Database_Setup_Guide.md)**: Contains comprehensive setup and installation instructions.
+*   **[DMSProject.pdf](./Report/DMSProject.pdf)**: The full project report detailing the design, implementation, and use of the database.
 
 ## 8. Ethics and Usage Guidelines
 
